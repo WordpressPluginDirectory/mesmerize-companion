@@ -6,7 +6,7 @@
  *
  * License: GPLv3 or later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
- * Version: 1.6.152
+ * Version: 1.6.158
  * Text Domain: mesmerize-companion
  */
 
@@ -21,7 +21,7 @@ if ( ! defined( 'MESMERIZE_COMPANION_PHP_VERSION' ) ) {
 }
 
 if ( ! defined( 'MESMERIZE_COMPANION_VERSION' ) ) {
-	define( 'MESMERIZE_COMPANION_VERSION', '1.6.152' );
+	define( 'MESMERIZE_COMPANION_VERSION', '1.6.158' );
 }
 
 function mesmerize_companion_php_version_notice() {     ?>
@@ -54,7 +54,7 @@ require_once __DIR__ . '/support/wp-5.8.php';
 Mesmerize\Companion::load( __FILE__ );
 add_filter( 'mesmerize_is_companion_installed', '__return_true' );
 
-add_action( 'plugins_loaded', 'mesmerize_companion_load_text_domain' );
+add_action( 'init', 'mesmerize_companion_load_text_domain' );
 
 function mesmerize_companion_load_text_domain() {
 	load_plugin_textdomain( 'mesmerize-companion', false, basename( dirname( __FILE__ ) ) . '/languages' );

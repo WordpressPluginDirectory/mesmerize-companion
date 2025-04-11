@@ -414,7 +414,7 @@ class Companion {
 		}
 		if ( ! is_array( $originalData ) ) {
 			$defaults[ $originalData ] = $data;
-			update_option( 'mesmerize_companion_filtered_defaults', $defaults );
+			update_option( 'mesmerize_companion_filtered_defaults', $defaults, false );
 		}
 
 		return $data;
